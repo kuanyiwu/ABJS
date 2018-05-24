@@ -1,5 +1,7 @@
 from__future__import print_function
 
+#Building Response Setup
+
 def build_speechlet_response(title,output,reprompt_text, should_end_session):
 	return{
 		'outputSpeech': {
@@ -28,7 +30,7 @@ def build_response(session_attributes,speechlet_response):
 		'response':speechlet_response
 	}
 
-#--------------------------------------------------------------------------------------------------------------------------------------------------------
+#Generating Intro Responses------------------------------------------------------------------------------------------------------------------------------
 
 def get_welcome_response():
 	session_attributes={}
@@ -65,9 +67,57 @@ def on_event(event_request, session):
 	event = event_request['event']
 	event_name = event_request['event']['name']
 
-	#All answers come from here
+
+#All answers come from here------------------------------------------------------------------------------------------------------------------------------
 	if event_name == "JF_Mission":
 		return JF_Mission(event, session)
 	elif event_name == "JF_Families":
-		return JFFamilies(event,session)
-
+		return JF_Families(event,session)
+	elif event_name == "AD_Job":
+		return AD_Job(event,session)
+	elif event_name == "BE_Job":
+		return BE_Job(event,session)
+	elif event_name == "BM_Job":
+		return BM_Job(event,session)
+	elif event_name == "IO_Job":
+		return IO_Job(event,session)
+	elif event_name == "LM_Job":
+		return LM_Job(event,session)
+	elif event_name == "PM_Job":
+		return PM_Job(event,session)
+	elif event_name == "QM_Job":
+		return QM_Job(event,session)
+	elif event_name == "SD_Job":
+		return SD_Job(event,session)
+	elif event_name == "SE_Job":
+		return SE_Job(event,session)
+	elif event_name == "UP_Job":
+		return UP_Job(event,session)
+	elif event_name == "JF_Framework_O":
+		return JF_Framework_O(event,session)
+	elif event_name == "JF_Framework_V":
+		return JF_Framework_V(event,session)
+	elif event_name == "Framework_Changes":
+		return Framework_Constants(event,session)
+	elif event_name == "JF_Framework":
+		return Framework_Constants(event,session)
+	elif event_name == "BM_Roles":
+		return BM_Roles(event,session)
+	elif event_name == "AD_Roles":
+		return AD_Roles(event,session)
+	elif event_name == "SE_Roles":
+		return SE_Roles(event,session)
+	elif event_name == "BE_Roles":
+		return BE_Roles(event,session)
+	elif event_name == "PM_Roles":
+		return PM_Roles(event,session)
+	elif event_name == "QM_Roles":
+		return QM_Roles(event,session)
+	elif event_name == "SD_Roles":
+		return SD_Roles(event,session)
+	elif event_name == "IO_Roles":
+		return IO_Roles(event,session)
+	elif event_name == "UP_Roles":
+		return UP_Roles(event,session)
+	elif event_name == "LM_Roles":
+		return LM_Roles(event,session)
