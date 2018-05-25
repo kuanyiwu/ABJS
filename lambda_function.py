@@ -53,7 +53,7 @@ def get_welcome_response():
 def handle_session_end_request():
     card_title = "Session Ended"
     speech_output = "Thank you for trying Alexa Best Job Skill. " \
-                    "Have a nice day and good luck on your job search! "
+                    "Have a nice day! "
     # Setting this to true ends the session and exits the skill.
     should_end_session = True
     return build_response({}, build_speechlet_response(
