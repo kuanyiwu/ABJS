@@ -41,7 +41,7 @@ def get_welcome_response():
 
     session_attributes = {}
     card_title = "Welcome"
-    speech_output = "Welcome to the Alexa Skills Kit. " \
+    speech_output = "Welcome to Alexa Best Job Skill. " \
                     "Please ask me about Job Families in Credit Suisse"
 
     reprompt_text = "Please ask me about Job Families"
@@ -52,8 +52,8 @@ def get_welcome_response():
 
 def handle_session_end_request():
     card_title = "Session Ended"
-    speech_output = "Thank you for trying the Alexa Skill. " \
-                    "Have a nice day! "
+    speech_output = "Thank you for trying Alexa Best Job Skill. " \
+                    "Have a nice day and good luck on your job search! "
     # Setting this to true ends the session and exits the skill.
     should_end_session = True
     return build_response({}, build_speechlet_response(
@@ -80,25 +80,25 @@ def job_family_function_intent(intent, session):
         session_attributes = create_intent_attributes(q)
         
         if q == "application architecture and development":
-            speech_output = "An AD is responsible for the technical analysis, design, architecture, development, implementation and support of software applications."
+            speech_output = "An A.D. is responsible for the technical analysis, design, architecture, development, implementation and support of software applications."
         elif q == "business analysis and engineering":
-            speech_output = "A BE is responsible for ensuring business requirements are clearly identified, prioritized and satisfied by appropriate technical and or business process solutions."
+            speech_output = "A B.E. is responsible for ensuring business requirements are clearly identified, prioritized and satisfied by appropriate technical and or business process solutions."
         elif q == "business management":
-            speech_output = "A BM is responsible for supporting the daily operations and controlled activities in running organizations effectively."
+            speech_output = "A B.M. is responsible for supporting the daily operations and controlled activities in running organizations effectively."
         elif q == "i.t. operations":
-            speech_output = "An IO is responsible for the deployment and optimization of critical IT infrastructure services."
+            speech_output = "An I.O. is responsible for the deployment and optimization of critical IT infrastructure services."
         elif q == "line management":
-            speech_output = "A LM focuses on adopting organization culture change and the effective staff leadership and management competencies that sustain resources."
+            speech_output = "A L.M. focuses on adopting organization culture change and the effective staff leadership and management competencies that sustain resources."
         elif q == "project management":
-            speech_output = "A PM is responsible for initiating, planning, executing, controlling, and closing the work of a team or project to achieve specific goals. "
+            speech_output = "A P.M. is responsible for initiating, planning, executing, controlling, and closing the work of a team or project to achieve specific goals. "
         elif q == "quality management and testing":
-            speech_output = "A QM focuses not only on product and service quality but also how to achieve it in order to achieve consistency. "
+            speech_output = "A Q.M. focuses not only on product and service quality but also how to achieve it in order to achieve consistency. "
         elif q == "service and delivery management":
-            speech_output = "A SD is responsible for the delivery of services or service technology to clients."
+            speech_output = "A S.D. is responsible for the delivery of services or service technology to clients."
         elif q == "systems architecture and engineering":
-            speech_output = "A SE is responsible for the full lifecycle of technology infrastructure systems globally, including identification of need, sourcing, design, engineering, development, testing, deployments and third level support."
+            speech_output = "A S.E. is responsible for the full lifecycle of technology infrastructure systems globally, including identification of need, sourcing, design, engineering, development, testing, deployments and third level support."
         elif q == "user production and support":
-            speech_output = "An UP is responsible for providing all IT support services to clients, maintaining the production environment and working with IT departments to ensure the delivery of requests."
+            speech_output = "An U.P. is responsible for providing all IT support services to clients, maintaining the production environment and working with IT departments to ensure the delivery of requests."
         else:
             speech_output = "I'm not sure what you're asking"
         reprompt_text = "You can ask me what are the job families at cs"
@@ -161,7 +161,7 @@ def job_family_roles_intent(intent, session):
     session_attributes = {}
     should_end_session = False
 
-    if 'family' in intent['slots']:
+    if 'value' in intent['slots']['family']:
         q = intent['slots']['family']['value']
         
         #synonyms
@@ -171,17 +171,17 @@ def job_family_roles_intent(intent, session):
         session_attributes = create_intent_attributes(q)
         
         if q == "application architecture and development":
-            speech_output = "the roles of an a.d. are development manager. it architect. software engineer. specialist engineer. data engineer."
+            speech_output = "the roles of an a.d. are development manager. i.t. architect. software engineer. specialist engineer. data engineer."
         elif q == "business analysis and engineering":
-            speech_output = "the roles of a b.e. are account or product manager. business analyst. business architect. it strategist. request manager."
+            speech_output = "the roles of a b.e. are account or product manager. business analyst. business architect. i.t. strategist. request manager."
         elif q == "business management":
-            speech_output = "the roles of the b.m. are administrative assistant. it coo or chief of staff. i.t. portfolio officer. i.t. vendor management or demand management. risk and controls management. "
+            speech_output = "the roles of the b.m. are administrative assistant. i.t. c.o.o. or chief of staff. i.t. portfolio officer. i.t. vendor management or demand management. risk and controls management. "
         elif q == "i.t. operations":
             speech_output = "the roles of a i.o. are end user operations. infrastructure operations. security operations."
         elif q == "line management":
             speech_output = "the l.m. is aligned with all of the career tracks."
         elif q == "project management":
-            speech_output = "the roles of a p.m. are program manager. program management office or pmo. project manager."
+            speech_output = "the roles of a p.m. are program manager. program management office or p.m.o. project manager."
         elif q == "quality management and testing":
             speech_output = "the roles of a q.m. are quality manager. test engineer. test manager."
         elif q == "service and delivery management":
@@ -193,6 +193,135 @@ def job_family_roles_intent(intent, session):
         else:
             speech_output = "I'm not sure what you're asking"
         reprompt_text = "You can ask me what are the job families at cs"
+
+    if 'value' in intent['slots']['role']:
+        q = intent['slots']['role']['value']
+        
+        #synonyms
+        if intent['slots']['role']['resolutions']['resolutionsPerAuthority'][0]['values'][0]['value']['name'] != None:
+            q = intent['slots']['role']['resolutions']['resolutionsPerAuthority'][0]['values'][0]['value']['name']
+            
+        session_attributes = create_intent_attributes(q)
+        
+        if q == "software engineer":
+            speech_output = "A software engineer needs to analyze problem space, develop models, code, create and maintain documentation, and more."
+        elif q == "development manager":
+            speech_output = "A development manager needs to identify the drivers, strategies, and needs of clients whiling ensuring cost optimization, is responsible for coordination of cross application dependencies and more. "
+        elif q == "i.t. architect":
+            speech_output = "An I.T. architect needs to define and maintain architecture, support overall it architecture development and conduct gap analysis as well as other roles."
+        elif q == "specialist engineer":
+            speech_output = "A specialist engineer needs to be an expert in a given technology or it knowledge area with certain responsibilities such as advisory, analysis, design, implementation and more.  "
+        elif q == "data engineer":
+            speech_output = "A data engineer covers all data related, define and model and prepare data for analytical or operational uses and may use machine learning, predictive modeling and other responsibilities."
+        elif q == "business analyst":
+            speech_output = "A business analyst act as a bridge between business and technology, describe processes and propose improvements to process, perform stakeholder analysis as well as other skills."
+        elif q == "request manager":
+            speech_output = "A request manager define and communicate the request management process and deliverables, responsible for assigning and maintaining business requests and other roles."
+        elif q == "business architect":
+            speech_output = "A business architect supports the banks I.T. strategy by developing T.O.M.s., work with the business and I.T. to formulate business cases that holistically transition the bank to the target logical and physical design and also understand and manage the effect of change."
+        elif q == "i.t. strategist":
+            speech_output = "An i.t. strategist delivers a C.S. competitive I.T. strategy that combines the business strategy, be an appreciated advisor to the business divisions and conduct other responsibilities."
+        elif q == "account and product manager":
+            speech_output = "A A.P.M. define and communicate the product vision and strategic positioning in alignment with credit suisse business and also be responsible for customer and vendor relationship management."
+        elif q == "i.t. c.o.o":
+            speech_output = "The i.t. c.o.o. is responsible for the overall financial management of the department, talent development, succession planning and promotions and provide governance for third party outsourcing arrangements. "
+        elif q == "chief of staff":
+            speech_output = "The chief of staff provide support to a department, division, regional or functional head. Plans facilities and issue management and conducts special projects and event planning."
+        elif q == "administrative assistant":
+            speech_output = "An administrative assistant coordinate and provide office and administrative support to individuals or groups, respond to or follow up on inquiries regarding the units policies and procedures and monitor adherence to health and safety requirements as well as other maintaining and monitoring responsibilities. "
+        elif q == "i.t. portfolio officer":
+            speech_output = "The i.t. portfolio officer own and manage i.t. product, leverage relationships, own it portfolio management governance, and much much more."
+        elif q == "i.t. vendor management":
+            speech_output = "The demand management or i.t. vendor management is responsible for defining best practices for managing outsourcing arrangements, support SVM in negotiation preparation and forecast and track I.T. capital expenditure."
+        elif q == "risk and controls management":
+            speech_output = "The risk and controls management provides ongoing services to ensure operational risk compliance, manage a program of work to ensure compliance with operational risk policies and monitor and report if needed any compliance status."
+        elif q == "infrastructure operator":
+            speech_output = "Infrastructure operators deploy and administer infrastructure components such as servers, manages change configuration capacity and lifecycle management, ensure compliance to R.T.O., R.P.O. and availability requirements."
+        elif q == "end user operator":
+            speech_output = "End User operators deploy and administer as messaging, collaboration and mobile applications, ensure compliance and archive emails/I.M.S./voice messages."
+        elif q == "security operator":
+            speech_output = "As a security operator, one must deploy and administer security infrastructure components, both physical and software while monitoring the escalation of security events and conduct forensic investigation. "
+        elif q == "line manager":
+            speech_output = "A line manager are responsible for strategic change delivery, operational management, business partner relationship and human capital management."
+        elif q == "project manager":
+            speech_output = "A project manager manages, plans, organizes and implements one or more i.t. Projects using standard methodology. "
+        elif q == "project management office":
+            speech_output = "A p.m.o provides support for financials tracking and change request management while also supporting stakeholder and business client management."
+        else:
+            speech_output = "I'm not sure what you're asking"
+        reprompt_text = "You can ask me what are the job families at cs"
+
+    return build_response(session_attributes, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+
+#JobBelong Intent
+def job_belong_intent(intent, session):
+
+    card_title = 'belong'
+    session_attributes = {}
+    should_end_session = False
+
+    if 'role' in intent['slots']:
+        q = intent['slots']['role']['value']
+        
+        #synonyms
+        if intent['slots']['role']['resolutions']['resolutionsPerAuthority'][0]['values'][0]['value']['name'] != None:
+            q = intent['slots']['role']['resolutions']['resolutionsPerAuthority'][0]['values'][0]['value']['name']
+            
+        session_attributes = create_intent_attributes(q)
+        
+        if q == "development manager" or q == "i.t. architect" or q == "software engineer" or q == "specialist engineer" or q == "data engineer":
+            speech_output = q + " belongs to a.d. or application architecture and development"
+        elif q == "account or product manager" or q == "business analyst" or q == "business architect" or q == "i.t. strategist" or q == "request manager":
+            speech_output = q + " belongs to b.e. or business analysis and engineering"
+        elif q == "administrative assistant" or q == "i.t. c.o.o." or q == "chief of staff" or q == "i.t. portfolio officer" or q == "i.t. vendor management" or "risk and controls management":
+            speech_output = q + " belongs to b.m. or business management"
+        elif q == "end user operations" or q == "infrastructure operations" or q == "security operatoins":
+            speech_output = q + " belongs to i.o. or i.t. operations"
+        elif q == "program manager" or q == "program management office" or q == "project manager":
+            speech_output = q + " belongs to p.m. or project management"
+        elif q == "quality manager" or q == "test engineer" or q == "test manager":
+            speech_output = q + " belongs to q.m. or quality management"
+        elif q == "account management" or q == "delivery management" or q == "service management":
+            speech_output = q + " belongs to s.d. or service and delivery management"
+        elif q == "infrastructure architect" or q == "infrastructure engineer" or q == "product manager":
+            speech_output = q + " belongs to s.e. or systems architecture and engineering"
+        elif q == "application support" or q == "desktop support" or q == "service desk":
+            speech_output = q + " belongs to u.p. or user production and support"
+        else:
+            speech_output = "I'm not sure what you're asking"
+        reprompt_text = "You can ask me what are the job families at cs"
+
+    return build_response(session_attributes, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+
+#TrackJobFamilies Intent
+def track_job_families_intent(intent, session):
+    card_title = 'track'
+    session_attributes = {}
+    should_end_session = False
+
+    if 'track' in intent['slots']:
+        q = intent['slots']['track']['value']
+        
+        #synonyms
+        if intent['slots']['track']['resolutions']['resolutionsPerAuthority'][0]['values'][0]['value']['name'] != None:
+            q = intent['slots']['track']['resolutions']['resolutionsPerAuthority'][0]['values'][0]['value']['name']
+            
+        session_attributes = create_intent_attributes(q)
+        
+        if q == "engineering":
+            speech_output = "The job families of engineering track are application architecture and development, systems architecture, and engineering."
+        elif q == "production support":
+            speech_output = "The job families of production support are i.t. operations, and user and production support."
+        elif q == "solution delivery":
+            speech_output = "The job families of solution delivery are business analysis and engieering, project management, quality management and testing, and service delivery and management."
+        elif q == "business management":
+            speech_output = "The job familiy of business management is business management."
+        else:
+            speech_output = "I'm not sure what you're asking"
+        reprompt_text = "You can ask me what are the job families at cs"
+
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
 
@@ -238,6 +367,10 @@ def on_intent(intent_request, session):
         return career_tracks_intent(intent, session)
     elif intent_name == "JobFamilyRoles":
         return job_family_roles_intent(intent, session)
+    elif intent_name == "JobBelong":
+        return job_belong_intent(intent, session)
+    elif intent_name == "TrackJobFamilies":
+        return track_job_families_intent(intent, session)
     elif intent_name == "AMAZON.HelpIntent":
         return get_welcome_response()
     elif intent_name == "AMAZON.CancelIntent" or intent_name == "AMAZON.StopIntent":
