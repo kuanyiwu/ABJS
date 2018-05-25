@@ -72,6 +72,8 @@ def job_family_role_intent(intent, session):
 
     if 'family' in intent['slots']:
         q = intent['slots']['family']['value']
+        if intent['slots']['family']['resolutions']['resolutionsPerAuthority'][0]['values'][0]['value']['name'] != None:
+            q = intent['slots']['family']['resolutions']['resolutionsPerAuthority'][0]['values'][0]['value']['name']
         session_attributes = create_intent_attributes(q)
         if q == "application architecture & development":
             speech_output = "An AD is responsible for the technical analysis, design, architecture, development, implementation and support of software applications."
