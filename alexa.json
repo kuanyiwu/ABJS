@@ -1,0 +1,510 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "job skill",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "JobFamilyFunction",
+                    "slots": [
+                        {
+                            "name": "family",
+                            "type": "Family"
+                        }
+                    ],
+                    "samples": [
+                        "what is {family}",
+                        "What does the {family} Job Family do",
+                        "what is the job family {family}"
+                    ]
+                },
+                {
+                    "name": "JobFamilyMission",
+                    "slots": [],
+                    "samples": [
+                        "mission of job family",
+                        "job family mission"
+                    ]
+                },
+                {
+                    "name": "JobFamilies",
+                    "slots": [],
+                    "samples": [
+                        "what are job families",
+                        "What are the job families"
+                    ]
+                },
+                {
+                    "name": "JobFamilyFramework",
+                    "slots": [],
+                    "samples": [
+                        "what is the objective of job family framework",
+                        "job family framework"
+                    ]
+                },
+                {
+                    "name": "CareerTracks",
+                    "slots": [],
+                    "samples": [
+                        "career tracks",
+                        "What are the four career tracks"
+                    ]
+                },
+                {
+                    "name": "JobFamilyRoles",
+                    "slots": [
+                        {
+                            "name": "family",
+                            "type": "Family"
+                        },
+                        {
+                            "name": "role",
+                            "type": "Role"
+                        }
+                    ],
+                    "samples": [
+                        "responsibility of {family}",
+                        "responsibility of {role}",
+                        "responsibilities of {role}",
+                        "responsibilities of {family}",
+                        "role of {family}",
+                        "role of {role}",
+                        "role for {family}",
+                        "role for {role}",
+                        "What are the roles for a {role}",
+                        "roles for {role}",
+                        "roles of {role}",
+                        "roles of {family}",
+                        "roles for {family}",
+                        "What are the roles for a {family}"
+                    ]
+                },
+                {
+                    "name": "JobBelong",
+                    "slots": [
+                        {
+                            "name": "role",
+                            "type": "Role"
+                        }
+                    ],
+                    "samples": [
+                        "{role} belong",
+                        "{role} belongs",
+                        "What family does a {role} belong to"
+                    ]
+                },
+                {
+                    "name": "TrackJobFamilies",
+                    "slots": [
+                        {
+                            "name": "track",
+                            "type": "Track"
+                        }
+                    ],
+                    "samples": [
+                        "{track} track",
+                        "part of {track} track"
+                    ]
+                },
+                {
+                    "name": "JobCert",
+                    "slots": [
+                        {
+                            "name": "family",
+                            "type": "Family"
+                        }
+                    ],
+                    "samples": [
+                        "certificates for {family}",
+                        "certificates of {family}",
+                        "what certificates can a {family}",
+                        "certification of {family}",
+                        "certifications of {family}",
+                        "certifications for {family}",
+                        "certification for {family}",
+                        "{family} certifications"
+                    ]
+                },
+                {
+                    "name": "JFExtraHelp",
+                    "slots": [],
+                    "samples": [
+                        "Can you recommend any learning sites",
+                        "more education",
+                        "learning site",
+                        "learning sites",
+                        "further education"
+                    ]
+                },
+                {
+                    "name": "JFFrameChange",
+                    "slots": [],
+                    "samples": [
+                        "change to framework",
+                        "change to the framework",
+                        "changes to framework",
+                        "changes to the framework"
+                    ]
+                },
+                {
+                    "name": "JFFrameUnchange",
+                    "slots": [],
+                    "samples": [
+                        "framework stay the same",
+                        "what of the framework is staying the same"
+                    ]
+                },
+                {
+                    "name": "JFTrainingContacts",
+                    "slots": [],
+                    "samples": [
+                        "regional training partners",
+                        "training partners contact",
+                        "training partners",
+                        "training contact",
+                        "training partner contact",
+                        "training partner contacts",
+                        "training contacts"
+                    ]
+                },
+                {
+                    "name": "JFValueStaff",
+                    "slots": [],
+                    "samples": [
+                        "use cases of staff",
+                        "staff how would i use",
+                        "value of staff",
+                        "value proposition of staff"
+                    ]
+                },
+                {
+                    "name": "JFValueManager",
+                    "slots": [],
+                    "samples": [
+                        "what are the value proposition and use cases of a manager",
+                        "use cases of a manager",
+                        "manager how would i use ",
+                        "use cases of manager",
+                        "value propositon of manager"
+                    ]
+                },
+                {
+                    "name": "JFCount",
+                    "slots": [],
+                    "samples": [
+                        "how many job families"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "Family",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "user production and support",
+                                "synonyms": [
+                                    "u p"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "systems architecture and engineering",
+                                "synonyms": [
+                                    "s e"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "service and delivery management",
+                                "synonyms": [
+                                    "sd",
+                                    "s d"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "quality management and testing",
+                                "synonyms": [
+                                    "qm",
+                                    "q m"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "project management",
+                                "synonyms": [
+                                    "pm",
+                                    "p m"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "line management",
+                                "synonyms": [
+                                    "l m",
+                                    "lm"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "i.t. operations",
+                                "synonyms": [
+                                    "i o",
+                                    "io"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "business management",
+                                "synonyms": [
+                                    "b m",
+                                    "bm"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "business analysis and engineering",
+                                "synonyms": [
+                                    "b e"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "application architecture and development",
+                                "synonyms": [
+                                    "a d"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Role",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "application support"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "infrastructure architect"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "product manager"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "service manager"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "delivery manager"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "account manager"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "quality manager"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "project management office",
+                                "synonyms": [
+                                    "p.m.o."
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "project manager"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "line manager"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "security operator"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "end user operator"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "infrastructure operator"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "risk and controls management"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "i.t. vendor management"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "i.t. portfolio officer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "administrative assistant"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "chief of staff"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "i.t. c.o.o"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "account and product manager",
+                                "synonyms": [
+                                    "a.p.m."
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "development engineer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "test engineer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "test manager"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "service desk"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "desktop support"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "software engineer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "i.t. architect"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "specialist engineer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "data engineer"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "business analyst"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "development manager"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "business architect"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "request manager"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Track",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "production support"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "solution delivery"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "engineering"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "business management"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
