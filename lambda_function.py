@@ -49,6 +49,17 @@ def get_welcome_response():
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
 
+def general_response():
+
+    session_attributes = {}
+    card_title = "Invalid"
+    speech_output = "I am sorry, I am unable to provide an answer to your question. Please visit one of our regional job family leads that are present here at the expo to acquire a possible answer."
+
+    reprompt_text = "Please ask me about Job Families"
+    should_end_session = False
+    return build_response(session_attributes, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+
 
 def handle_session_end_request():
     card_title = "Session Ended"
@@ -454,14 +465,6 @@ def jf_count(intent, session):
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
 
-def general_response():
-    card_titile = "gen"
-    session_attributes = {}
-    should_end_session = False
-    speech_output = "I am sorry, I am unable to provide an answer to your question. Please visit one of our regional job family leads that are present here at the expo to acquire a possible answer."
-    reprompt_text = "generic"
-    return build_response(session_attributes, build_speechlet_response(
-        card_title, speech_output, reprompt_text, should_end_session))
 
 # --------------- Events ------------------
 
